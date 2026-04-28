@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- ============================================================
-     BASE82 — ABOUT.HTML
-     Mission briefing & team story
-============================================================ -->
-
 <head>
     <meta charset="UTF-8">
     <title>About — BASE82</title>
@@ -16,7 +11,6 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="../CSS/pages.css">
     <link rel="stylesheet" href="../CSS/about.css">
     <link rel="stylesheet" href="../CSS/theme-switcher.css">
@@ -24,9 +18,6 @@
 
 <body>
 
-    <!-- ============================================================
-         NAVIGATION
-    ============================================================ -->
     <header class="top-nav">
         <a href="home.html" class="nav-brand">
             <img src="../asserts/logo.png" alt="BASE82">
@@ -41,110 +32,110 @@
         </ul>
     </header>
 
-    <!-- ============================================================
-         PAGE CONTENT
-    ============================================================ -->
     <div class="page-wrapper">
 
-        <!-- Page header -->
-        <p class="page-eyebrow">MISSION BRIEFING</p>
-        <h1 class="page-title">ABOUT<br><span class="accent">BASE82</span></h1>
-        <p class="page-subtitle">
-            We built the command center gamers deserve — tactical, fast, and obsessively curated.
-        </p>
-
-        <!-- MANIFESTO -->
-        <div class="manifesto">
-            <div class="manifesto-text">
-                <p>BASE82 started as a <strong>personal obsession</strong> — a need for a game discovery platform
-                    that actually understood how gamers think. Not casual browsers. Not passive scrollers. Hunters.</p>
-                <p>We wanted a place where finding your next game felt like <strong>picking a target</strong>.
-                    Where ratings meant something. Where the interface didn't get in the way.</p>
-                <p>So we built it. <strong>BASE82</strong> — your tactical operations base for the world of games.
-                    Every release tracked. Every score measured. Every hidden gem surfaced.</p>
-            </div>
-            <div class="manifesto-visual">
-                <div class="stat-block">
-                    <span class="stat-num">500K+</span>
-                    <span class="stat-label">GAMES IN DATABASE</span>
-                </div>
-                <div class="stat-block">
-                    <span class="stat-num">8.4K</span>
-                    <span class="stat-label">ACTIVE OPERATORS</span>
-                </div>
-                <div class="stat-block">
-                    <span class="stat-num">99.9%</span>
-                    <span class="stat-label">UPTIME</span>
-                </div>
-            </div>
+        <div class="about-header">
+            <p class="page-eyebrow">THE OPERATORS</p>
+            <h1 class="page-title">BUILT BY<br><span class="accent">HUMANS</span></h1>
+            <p class="page-subtitle">Three people. One platform. Zero compromise.</p>
         </div>
 
-        <!-- VALUES -->
-        <div class="section-rule"><span>CORE DIRECTIVES</span></div>
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-crosshairs"></i></div>
-                <div class="value-title">PRECISION</div>
-                <p class="value-desc">No bloat. No filler. Every feature on BASE82 serves a purpose — discover, compare,
-                    decide.</p>
+        <div class="dev-grid">
+
+            <!-- DEV 01 -->
+            <div class="dev-card" data-index="01">
+                <div class="dev-card-inner">
+                    <div class="dev-index">01</div>
+                    <div class="dev-photo-wrap">
+                        <div class="dev-photo-ring"></div>
+                        <div class="dev-photo-ring ring-2"></div>
+                        <img src="../asserts/pic1.jpg" alt="Chakradhar S K D" class="dev-photo"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="dev-photo-fallback">CK</div>
+                    </div>
+                    <div class="dev-info">
+                        <div class="dev-name">Chakradhar S K D</div>
+                        <div class="dev-role">FRONTEND ENGINEER</div>
+                        <p class="dev-bio">Architected the core experience — Explore, Home, and Game Details. The engine
+                            under the hood.</p>
+                        <div class="dev-tags">
+                            <span>EXPLORE</span>
+                            <span>HOME</span>
+                            <span>GAME DETAILS</span>
+                        </div>
+                    </div>
+                    <div class="dev-card-glow"></div>
+                </div>
             </div>
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-bolt"></i></div>
-                <div class="value-title">SPEED</div>
-                <p class="value-desc">Sub-second search. Instant card loads. The platform moves at the speed of your
-                    decision-making.</p>
+
+            <!-- DEV 02 -->
+            <div class="dev-card" data-index="02">
+                <div class="dev-card-inner">
+                    <div class="dev-index">02</div>
+                    <div class="dev-photo-wrap">
+                        <div class="dev-photo-ring"></div>
+                        <div class="dev-photo-ring ring-2"></div>
+                        <img src="../asserts/pic2.jpg" alt="Harshadeep N" class="dev-photo"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="dev-photo-fallback">HN</div>
+                    </div>
+                    <div class="dev-info">
+                        <div class="dev-name">Harshadeep N</div>
+                        <div class="dev-role">UI/UX ENGINEER</div>
+                        <p class="dev-bio">Crafted the first impression — Login and Signup. Every new player walks
+                            through his door.</p>
+                        <div class="dev-tags">
+                            <span>LOGIN</span>
+                            <span>SIGNUP</span>
+                        </div>
+                    </div>
+                    <div class="dev-card-glow"></div>
+                </div>
             </div>
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
-                <div class="value-title">INTEGRITY</div>
-                <p class="value-desc">Ratings pulled from verified community data. No sponsored placements. No
-                    algorithmic bias.</p>
+
+            <!-- DEV 03 -->
+            <div class="dev-card" data-index="03">
+                <div class="dev-card-inner">
+                    <div class="dev-index">03</div>
+                    <div class="dev-photo-wrap">
+                        <div class="dev-photo-ring"></div>
+                        <div class="dev-photo-ring ring-2"></div>
+                        <img src="../asserts/pic3.jpg" alt="Gunpreet K" class="dev-photo"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="dev-photo-fallback">GK</div>
+                    </div>
+                    <div class="dev-info">
+                        <div class="dev-name">Gunpreet K</div>
+                        <div class="dev-role">PRODUCT ENGINEER</div>
+                        <p class="dev-bio">Built the information layer — About, FAQ, and Contact. The voice of BASE82.
+                        </p>
+                        <div class="dev-tags">
+                            <span>ABOUT</span>
+                            <span>FAQ</span>
+                            <span>CONTACT</span>
+                        </div>
+                    </div>
+                    <div class="dev-card-glow"></div>
+                </div>
             </div>
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-users"></i></div>
-                <div class="value-title">COMMUNITY</div>
-                <p class="value-desc">Built by gamers for gamers. The leaderboard, the curation, the taste — all driven
-                    by real players.</p>
-            </div>
+
         </div>
 
-        <!-- TIMELINE -->
-        <div class="section-rule"><span>OPERATION LOG</span></div>
-        <div class="timeline">
-            <div class="tl-item">
-                <div class="tl-date">PHASE 01 — CONCEPT</div>
-                <div class="tl-title">THE MISSION BEGINS</div>
-                <p class="tl-desc">BASE82 conceived as a semester project with a simple goal: build a game discovery
-                    platform that doesn't suck.</p>
-            </div>
-            <div class="tl-item">
-                <div class="tl-date">PHASE 02 — ALPHA</div>
-                <div class="tl-title">LOGIN + HOME DEPLOYED</div>
-                <p class="tl-desc">Core authentication flow built. Home page goes live with dynamic RAWG API
-                    integration, scrolling carousel, and tactical HUD aesthetics.</p>
-            </div>
-            <div class="tl-item">
-                <div class="tl-date">PHASE 03 — CURRENT</div>
-                <div class="tl-title">FULL PLATFORM LAUNCH</div>
-                <p class="tl-desc">Explore, leaderboard, search, FAQ, About and Contact go live. The base is fully
-                    operational.</p>
-            </div>
-            <div class="tl-item">
-                <div class="tl-date">PHASE 04 — FUTURE</div>
-                <div class="tl-title">OPERATOR PROFILES & LOADOUTS</div>
-                <p class="tl-desc">Personal game libraries, wishlist tracking, and custom playstyle tags. Coming soon.
-                </p>
-            </div>
+        <!-- Bottom strip -->
+        <div class="about-footer-strip">
+            <div class="strip-stat"><span class="s-val">3</span><span class="s-lbl">OPERATORS</span></div>
+            <div class="strip-divider"></div>
+            <div class="strip-stat"><span class="s-val">8</span><span class="s-lbl">PAGES SHIPPED</span></div>
+            <div class="strip-divider"></div>
+            <div class="strip-stat"><span class="s-val">1</span><span class="s-lbl">VISION</span></div>
         </div>
 
     </div>
 
-    <!-- Toast -->
     <div id="customToast" class="custom-toast">
         <span id="toastMessage"></span>
     </div>
 
-    <!-- Scripts -->
     <script src="../JS/about.js"></script>
     <script src="../JS/theme-switcher.js"></script>
 
