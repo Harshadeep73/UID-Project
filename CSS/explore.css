@@ -1,0 +1,251 @@
+/* ============================================================
+   BASE82 — EXPLORE.CSS
+   Theme: Refined Dark + Warm Amber
+============================================================ */
+
+/* ── SEARCH BAR ── */
+.search-bar-wrapper {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    padding: 0 20px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar:focus-within {
+    border-color: rgba(232, 160, 69, 0.4);
+    box-shadow: 0 0 0 3px rgba(232, 160, 69, 0.06);
+}
+
+.search-icon {
+    color: var(--accent-dim);
+    font-size: 14px;
+    margin-right: 14px;
+    flex-shrink: 0;
+}
+
+#searchInput {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 18px 0;
+    flex: 1;
+    outline: none;
+}
+
+#searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.search-clear {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 12px;
+    display: none;
+    transition: color 0.2s;
+}
+
+.search-clear:hover {
+    color: var(--accent-primary);
+}
+
+/* ── FILTER CHIPS ── */
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.filter-chip {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    color: var(--text-secondary);
+    padding: 7px 18px;
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-chip:hover {
+    border-color: rgba(232, 160, 69, 0.35);
+    color: var(--accent-warm);
+}
+
+.filter-chip.active {
+    background: rgba(232, 160, 69, 0.1);
+    border-color: rgba(232, 160, 69, 0.45);
+    color: var(--accent-primary);
+}
+
+/* ── RESULTS COUNT ── */
+.results-count {
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 9px;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+}
+
+.results-count span {
+    color: var(--accent-primary);
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+/* ── GAME CARD ── */
+.game-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeInCard 0.4s forwards;
+}
+
+@keyframes fadeInCard {
+    to {
+        opacity: 1;
+    }
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(232, 160, 69, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.game-card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.75) saturate(0.9) !important;
+    transition: filter 0.4s;
+}
+
+.game-card:hover .game-card-img {
+    filter: brightness(0.95) saturate(1.0) !important;
+}
+
+.game-card-body {
+    padding: 14px 16px 16px;
+}
+
+.game-card-name {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-primary);
+}
+
+.game-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-card-rating {
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 9px;
+    color: var(--accent-primary);
+    letter-spacing: 1px;
+}
+
+.game-card-date {
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 9px;
+    color: var(--text-muted);
+}
+
+/* ── HOVER HINT ── */
+.game-card-hover-hint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent 40%, rgba(13, 15, 18, 0.75) 100%);
+    color: var(--accent-primary);
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 0 16px 12px;
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+}
+
+.game-card:hover .game-card-hover-hint {
+    opacity: 1;
+}
+
+/* ── SKELETON ── */
+.skeleton {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    height: 210px;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* ── LOAD MORE ── */
+.load-more-btn {
+    display: block;
+    margin: 48px auto 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    padding: 14px 48px;
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.load-more-btn:hover {
+    background: rgba(232, 160, 69, 0.06);
+    border-color: rgba(232, 160, 69, 0.35);
+    color: var(--accent-primary);
+}

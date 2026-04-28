@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     BASE82 — HOME.HTML
+     Entry point / main dashboard
+============================================================ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="BASE82 — Your tactical game discovery command center. 500,000+ games, live leaderboards, and instant search.">
+    <meta name="keywords" content="BASE82, game discovery, gaming platform, game ratings, leaderboard">
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="BASE82 — Game Discovery Platform">
+    <meta property="og:description" content="Tactical game discovery. 500,000+ games. One command center.">
+    <meta property="og:image" content="../asserts/logo.png">
+
+    <title>BASE82 — Game Discovery</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../asserts/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/theme-switcher.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+         LOADER
+    ============================================================ -->
+    <div id="siteLoader" class="site-loader" role="status" aria-label="Loading BASE82">
+        <div class="loader-brand" id="loaderBrand">
+            <img src="../asserts/logo.png" alt="BASE82" class="loader-logo" width="60" height="60">
+            <div class="loader-text-slide" aria-hidden="true">BASE82</div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         SIDEBAR MENU
+    ============================================================ -->
+    <aside class="sidebar-menu" id="sidebarMenu" aria-label="Site navigation menu" aria-hidden="true">
+        <button class="menu-close" id="menuClose" aria-label="Close navigation menu">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <nav aria-label="Sidebar navigation">
+            <ul class="side-nav-links">
+                <li><a href="explore.html" class="side-link">EXPLORE<sup>01</sup></a></li>
+                <li><a href="about.html" class="side-link">ABOUT<sup>02</sup></a></li>
+                <li><a href="contact.html" class="side-link">CONTACT<sup>03</sup></a></li>
+                <li><a href="faq.html" class="side-link">FAQ<sup>04</sup></a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <!-- ============================================================
+         HEADER / NAV
+    ============================================================ -->
+    <header class="top-nav" role="banner">
+
+        <!-- Left: hamburger -->
+        <div class="nav-left">
+            <button class="hamburger-btn" id="menuOpen" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="sidebarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <!-- Center: brand -->
+        <div class="nav-center">
+            <a href="home.html" class="header-brand" aria-label="BASE82 home">
+                <img src="../asserts/logo.png" alt="BASE82" class="header-logo" width="36" height="36">
+                <span class="header-text">BASE82</span>
+            </a>
+        </div>
+
+        <!-- Right: theme switcher + user module -->
+        <div class="nav-right" style="display:flex;align-items:center;">
+        <div class="user-module" role="navigation" aria-label="User account">
+            <div class="user-profile-trigger" id="userProfileTrigger" role="button" tabindex="0" aria-haspopup="true"
+                aria-expanded="false" aria-label="User profile menu">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="playerNameDisplay" class="player-name">PLAYER</span>
+                <i class="fas fa-chevron-down" style="font-size:8px; color: var(--text-muted);" aria-hidden="true"></i>
+            </div>
+            <nav class="profile-dropdown" id="profileDropdown" aria-label="Profile options">
+                <button class="drop-item" type="button">
+                    <i class="fas fa-user-astronaut" aria-hidden="true"></i> VIEW STATS
+                </button>
+                <button class="drop-item" type="button">
+                    <i class="fas fa-crosshairs" aria-hidden="true"></i> LOADOUTS
+                </button>
+                <button class="drop-item" type="button">
+                    <i class="fas fa-cog" aria-hidden="true"></i> SETTINGS
+                </button>
+                <div class="drop-divider" role="separator"></div>
+                <button class="drop-item logout" id="dropLogoutBtn" type="button">
+                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i> DISCONNECT
+                </button>
+            </nav>
+        </div><!-- /.user-module -->
+        </div><!-- /.nav-right -->
+
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT
+    ============================================================ -->
+    <main id="main-content">
+
+        <!-- HERO WITH CAROUSEL BACKGROUND -->
+        <section class="hero-carousel" aria-label="Hero — Game discovery">
+
+            <!-- Carousel background (decorative) -->
+            <div class="carousel-bg-strip" id="carouselBg" aria-hidden="true">
+                <div class="carousel-row carousel-row-1" id="row1"></div>
+                <div class="carousel-row carousel-row-2" id="row2"></div>
+                <div class="carousel-row carousel-row-3" id="row3"></div>
+                <div class="carousel-row carousel-row-4" id="row4"></div>
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <div class="hero-content">
+                <p class="hero-eyebrow">GAME DISCOVERY PLATFORM</p>
+                <h1 class="hero-title">
+                    FIND YOUR<br><span class="accent-primary">NEXT TARGET</span>
+                </h1>
+                <p class="hero-sub">500,000+ games. One command center.</p>
+
+                <!-- Hero search -->
+                <div class="hero-search">
+                    <div class="search-wrap" id="searchWrap" role="search">
+                        <label for="heroSearch" class="visually-hidden">Search games</label>
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="search" id="heroSearch" placeholder="Search games, genres, studios..."
+                            autocomplete="off" aria-label="Search games">
+                        <button class="search-btn" id="heroSearchBtn" type="button"
+                            aria-label="Submit search">SEARCH</button>
+                        <div class="search-results-dropdown" id="searchDropdown" role="listbox"
+                            aria-label="Search suggestions"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- LEADERBOARD SECTION -->
+        <section class="leaderboard-section" id="leaderboard" aria-label="Weekly game leaderboard">
+            <div class="lb-header">
+                <div class="lb-title-group">
+                    <p class="lb-eyebrow">WEEKLY RANKINGS</p>
+                    <h2 class="lb-title">LEADERBOARD</h2>
+                </div>
+                <div class="lb-badge" aria-label="Live leaderboard">
+                    <div class="lb-pulse" aria-hidden="true"></div>
+                    LIVE
+                </div>
+            </div>
+            <div class="lb-grid" id="leaderboardBody" role="list" aria-label="Top games this week"></div>
+        </section>
+
+        <!-- DIAGNOSTICS -->
+        <section class="diagnostics" aria-label="Server diagnostics">
+            <div class="diag-card">
+                <h3>SERVER STATUS</h3>
+                <p id="serverStatus" class="accent-primary">OPTIMAL</p>
+            </div>
+            <div class="diag-card">
+                <h3>LATENCY</h3>
+                <p id="serverLatency">12ms</p>
+            </div>
+            <div class="diag-card">
+                <h3>ACTIVE USERS</h3>
+                <p id="activeUsers">8,492</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer
+        style="text-align:center; padding: 24px 40px 40px; border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 1;">
+        <nav aria-label="Footer navigation">
+            <ul
+                style="list-style:none; display:flex; gap:32px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
+                <li><a href="home.html"
+                        style="color:var(--text-muted); text-decoration:none; font-family:'PixelDigivolve',monospace; font-size:9px; letter-spacing:2px;">HOME</a>
+                </li>
+                <li><a href="explore.html"
+                        style="color:var(--text-muted); text-decoration:none; font-family:'PixelDigivolve',monospace; font-size:9px; letter-spacing:2px;">EXPLORE</a>
+                </li>
+                <li><a href="about.html"
+                        style="color:var(--text-muted); text-decoration:none; font-family:'PixelDigivolve',monospace; font-size:9px; letter-spacing:2px;">ABOUT</a>
+                </li>
+                <li><a href="contact.html"
+                        style="color:var(--text-muted); text-decoration:none; font-family:'PixelDigivolve',monospace; font-size:9px; letter-spacing:2px;">CONTACT</a>
+                </li>
+                <li><a href="faq.html"
+                        style="color:var(--text-muted); text-decoration:none; font-family:'PixelDigivolve',monospace; font-size:9px; letter-spacing:2px;">FAQ</a>
+                </li>
+            </ul>
+            <p
+                style="font-family:'PixelDigivolve',monospace; font-size:9px; color:rgba(255,255,255,0.15); letter-spacing:2px;">
+                &copy; 2025 BASE82 — <a href="#leaderboard"
+                    style="color:rgba(200,208,200,0.4); text-decoration:none;">BACK TO TOP</a>
+            </p>
+        </nav>
+    </footer>
+
+    <!-- Toast -->
+    <div id="customToast" class="custom-toast" role="status" aria-live="polite">
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Utility -->
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="../JS/home.js"></script>
+    <script src="../JS/theme-switcher.js"></script>
+
+</body>
+
+</html>

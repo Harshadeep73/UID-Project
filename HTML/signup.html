@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     BASE82 — SIGNUP.HTML
+     New operator registration
+============================================================ -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>BASE82 — Sign Up</title>
+    <link rel="icon" type="image/png" href="../asserts/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet (shares login styles) -->
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+         BACKGROUND LANES
+    ============================================================ -->
+    <div class="lane lane1">
+        <div class="track">
+            <img src="../asserts/eldenring.jpg" alt="Game">
+            <img src="../asserts/cyberpunk.png" alt="Game">
+            <img src="../asserts/minecraft.jpg" alt="Game">
+            <img src="../asserts/witcher 3.jpg" alt="Game">
+            <img src="../asserts/got.jpg" alt="Game">
+            <img src="../asserts/uncharted4.jpg" alt="Game">
+            <img src="../asserts/eldenring.jpg" alt="Game">
+            <img src="../asserts/cyberpunk.png" alt="Game">
+            <img src="../asserts/minecraft.jpg" alt="Game">
+            <img src="../asserts/witcher 3.jpg" alt="Game">
+            <img src="../asserts/got.jpg" alt="Game">
+            <img src="../asserts/uncharted4.jpg" alt="Game">
+        </div>
+    </div>
+
+    <div class="lane lane2">
+        <div class="track reverse">
+            <img src="../asserts/cod.jpg" alt="Game">
+            <img src="../asserts/bl4.jpg" alt="Game">
+            <img src="../asserts/gow.jpg" alt="Game">
+            <img src="../asserts/sekiro.jpg" alt="Game">
+            <img src="../asserts/gta5.jpg" alt="Game">
+            <img src="../asserts/hollowknight.jpg" alt="Game">
+            <img src="../asserts/cod.jpg" alt="Game">
+            <img src="../asserts/bl4.jpg" alt="Game">
+            <img src="../asserts/gow.jpg" alt="Game">
+            <img src="../asserts/sekiro.jpg" alt="Game">
+            <img src="../asserts/gta5.jpg" alt="Game">
+            <img src="../asserts/hollowknight.jpg" alt="Game">
+        </div>
+    </div>
+
+    <div class="lane lane3">
+        <div class="track">
+            <img src="../asserts/re9.jpg" alt="Game">
+            <img src="../asserts/exp33.jpg" alt="Game">
+            <img src="../asserts/skyrim.jpg" alt="Game">
+            <img src="../asserts/rdr2.jpg" alt="Game">
+            <img src="../asserts/darksouls.jpg" alt="Game">
+            <img src="../asserts/forza4.jpg" alt="Game">
+            <img src="../asserts/re9.jpg" alt="Game">
+            <img src="../asserts/exp33.jpg" alt="Game">
+            <img src="../asserts/skyrim.jpg" alt="Game">
+            <img src="../asserts/rdr2.jpg" alt="Game">
+            <img src="../asserts/darksouls.jpg" alt="Game">
+            <img src="../asserts/forza4.jpg" alt="Game">
+        </div>
+    </div>
+
+    <!-- ============================================================
+         SIGNUP CARD
+    ============================================================ -->
+    <div class="loginCard">
+
+        <div class="logoWrapper" style="margin-bottom: 20px;">
+            <img src="../asserts/logo.png" class="logoImg" alt="BASE82 Logo">
+        </div>
+
+        <div class="inputGroup">
+            <div class="inputBox">
+                <input type="text" id="username" placeholder="USERNAME" autocomplete="off">
+            </div>
+            <div class="inputBox">
+                <input type="email" id="email" placeholder="EMAIL" autocomplete="off">
+            </div>
+            <div class="inputBox">
+                <input type="password" id="password" placeholder="PASSWORD">
+                <button type="button" class="togglePassword" id="togglePassword1">SHOW</button>
+            </div>
+            <div class="inputBox">
+                <input type="password" id="confirmPassword" placeholder="CONFIRM PASSWORD">
+            </div>
+        </div>
+
+        <div class="options" style="justify-content: center; margin-top: 15px; margin-bottom: 20px;">
+            <label class="rememberBox">
+                <input type="checkbox" id="termsBox"> I AGREE TO THE TERMS & CONDITIONS
+            </label>
+        </div>
+
+        <button class="gameOnBtn" id="signupBtn">JOIN BASE82</button>
+
+        <div class="socialLogin" style="margin-top: 20px;">
+            <p class="socialDivider"><span>OR SIGN UP WITH</span></p>
+            <div class="socialIcons">
+                <button class="socialBtn" title="Google" onclick="showToast('Google coming soon')">
+                    <i class="fab fa-google"></i>
+                </button>
+                <button class="socialBtn" title="Steam" onclick="showToast('Steam coming soon')">
+                    <i class="fab fa-steam"></i>
+                </button>
+                <button class="socialBtn" title="Discord" onclick="showToast('Discord coming soon')">
+                    <i class="fab fa-discord"></i>
+                </button>
+                <button class="socialBtn" title="Facebook" onclick="showToast('Facebook coming soon')">
+                    <i class="fab fa-facebook"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="signupLink">
+            ALREADY A PLAYER? <a href="login.html">LOGIN</a>
+        </div>
+
+    </div>
+
+    <!-- Toast -->
+    <div id="customToast" class="custom-toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../JS/signup.js"></script>
+
+</body>
+
+</html>

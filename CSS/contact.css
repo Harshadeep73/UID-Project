@@ -1,0 +1,172 @@
+/* ============================================================
+   BASE82 — CONTACT.CSS
+   Theme: Refined Dark + Warm Amber
+============================================================ */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .contact-layout { grid-template-columns: 1fr; }
+}
+
+.contact-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 22px 26px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+    border-color: rgba(232, 160, 69, 0.25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.info-icon {
+    color: var(--accent-primary);
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    text-shadow: none;
+}
+
+.info-label {
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.response-note {
+    margin-top: 8px;
+    padding: 16px 20px;
+    background: rgba(232, 160, 69, 0.04);
+    border: 1px solid rgba(232, 160, 69, 0.12);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ── FORM ── */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    font-size: 13px;
+    padding: 13px 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+}
+
+.form-select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.7;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: rgba(232, 160, 69, 0.4);
+    box-shadow: 0 0 0 2px rgba(232, 160, 69, 0.06);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.form-select option {
+    background: var(--bg-mid);
+    color: var(--text-primary);
+}
+
+/* ── SUBMIT BUTTON ── */
+.submit-btn {
+    background: var(--accent-primary);
+    color: #0d0f12;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-family: 'PixelDigivolve', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.submit-btn:hover {
+    background: var(--accent-warm);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+.submit-btn.sending {
+    background: var(--accent-warm);
+    color: #0d0f12;
+    pointer-events: none;
+}

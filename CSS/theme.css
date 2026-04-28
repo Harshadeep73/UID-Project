@@ -1,0 +1,296 @@
+/* ============================================================
+   BASE82 — THEME.CSS  (Refined Dark + Warm Amber Edition)
+   Palette: Deep Charcoal + Warm Amber + Subtle Slate
+   Import this AFTER pages.css / home.css on every page
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap');
+
+:root
+{
+    /* ── Backgrounds ── */
+    --bg-dark:          #0d0f12;
+    --bg-mid:           #13161b;
+    --bg-card:          #181c22;
+    --bg-surface:       #1e2229;
+
+    /* ── Accent: Warm Amber ── */
+    --accent-primary:   #e8a045;
+    --accent-warm:      #f0b866;
+    --accent-dim:       #c07828;
+    --accent-glow:      rgba(232, 160, 69, 0.15);
+
+    /* ── Aliases ── */
+    --accent-blue:      #e8a045;
+    --accent-cyan:      #f0b866;
+    --accent-green:     #e8a045;
+    --accent-violet:    #c07828;
+    --accent-secondary: #c07828;
+
+    /* ── Neutral Slate ── */
+    --slate:            #4a6080;
+    --slate-light:      #6a8aaa;
+    --slate-faint:      rgba(100, 140, 180, 0.12);
+
+    /* ── Text ── */
+    --text-primary:     #e8ecf0;
+    --text-secondary:   #8a9bb0;
+    --text-muted:       #4a5568;
+
+    /* ── UI Chrome ── */
+    --nav-bg:           rgba(13, 15, 18, 0.96);
+    --card-bg:          rgba(24, 28, 34, 0.8);
+    --card-border:      rgba(255, 255, 255, 0.06);
+    --card-border-hover: rgba(232, 160, 69, 0.25);
+
+    /* ── Glows (soft) ── */
+    --glow-sm:  0 0 12px rgba(232, 160, 69, 0.2);
+    --glow-md:  0 0 24px rgba(232, 160, 69, 0.15);
+    --glow-lg:  0 0 40px rgba(232, 160, 69, 0.1);
+
+    /* ── Radius ── */
+    --radius-sm: 5px;
+    --radius-md: 9px;
+    --radius-lg: 14px;
+}
+
+/* ── Body ── */
+body
+{
+    background-color:   var(--bg-dark);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 48px 48px;
+    color: var(--text-primary);
+}
+
+img { filter: none !important; }
+
+/* ── Scanlines — warm tint ── */
+body::after
+{
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(232, 160, 69, 0.012) 3px,
+        rgba(232, 160, 69, 0.012) 6px
+    ) !important;
+}
+
+/* ── NAV ── */
+.top-nav
+{
+    border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links a { color: var(--text-secondary); letter-spacing: 1.5px; }
+.nav-links a::after { background: var(--accent-primary) !important; box-shadow: none !important; }
+.nav-links a:hover  { color: var(--accent-warm) !important; text-shadow: none !important; }
+.nav-links a.active { color: var(--accent-primary) !important; text-shadow: none !important; }
+
+.nav-brand span { color: var(--text-primary) !important; text-shadow: none !important; letter-spacing: 2px; }
+
+/* ── Page header ── */
+.page-eyebrow         { color: var(--accent-dim) !important; letter-spacing: 4px; }
+.page-title .accent   { color: var(--accent-primary) !important; text-shadow: none !important; }
+
+/* ── Section rule ── */
+.section-rule::before,
+.section-rule::after  { background: rgba(255, 255, 255, 0.06) !important; }
+.section-rule span    { color: var(--text-muted) !important; letter-spacing: 3px; }
+
+/* ── Cards ── */
+.card { background: var(--card-bg) !important; border-color: var(--card-border) !important; }
+.card:hover
+{
+    border-color: var(--card-border-hover) !important;
+    background: rgba(24, 28, 34, 0.95) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ── Leaderboard ── */
+.lb-card:hover { border-color: rgba(232, 160, 69, 0.3) !important; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important; }
+.lb-rating-fill { background: var(--accent-primary) !important; box-shadow: none !important; }
+.lb-rating-val  { color: var(--accent-primary) !important; text-shadow: none !important; }
+.lb-eyebrow     { color: var(--accent-dim) !important; }
+.lb-title       { color: var(--text-primary) !important; text-shadow: none !important; }
+.lb-badge       { border-color: rgba(232, 160, 69, 0.2) !important; color: var(--accent-primary) !important; background: rgba(232, 160, 69, 0.06) !important; }
+.lb-pulse       { background: var(--accent-primary) !important; }
+.lb-card-cover  { filter: brightness(0.85) !important; }
+.lb-card:hover .lb-card-cover { filter: brightness(1) !important; }
+
+/* ── Hero ── */
+.hero-eyebrow { color: var(--slate-light) !important; }
+.hero-title .accent-primary { color: var(--accent-primary) !important; text-shadow: none !important; }
+.hero-sub { color: var(--text-secondary) !important; }
+
+.carousel-thumb { filter: brightness(0.5) saturate(0.5) !important; }
+.sri-img        { filter: none !important; }
+
+/* ── Search ── */
+.search-wrap { background: rgba(255, 255, 255, 0.04) !important; border-color: rgba(255, 255, 255, 0.1) !important; }
+.search-wrap:focus-within
+{
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(232, 160, 69, 0.4) !important;
+    box-shadow: 0 0 0 3px rgba(232, 160, 69, 0.06) !important;
+}
+.search-wrap .fa-search { color: var(--accent-dim) !important; }
+#heroSearch::placeholder { color: rgba(255, 255, 255, 0.2) !important; }
+.search-btn { background: var(--accent-primary) !important; color: #0d0f12 !important; box-shadow: none !important; font-weight: 700; }
+.search-btn:hover { background: var(--accent-warm) !important; box-shadow: none !important; }
+.search-results-dropdown { background: var(--bg-card) !important; border-color: rgba(255, 255, 255, 0.08) !important; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important; }
+.search-result-item:hover { background: rgba(232, 160, 69, 0.06) !important; }
+
+/* ── Filter chips ── */
+.filter-chip { border-color: rgba(255, 255, 255, 0.08) !important; color: var(--text-secondary) !important; }
+.filter-chip:hover { border-color: rgba(232, 160, 69, 0.3) !important; color: var(--accent-warm) !important; box-shadow: none !important; }
+.filter-chip.active { background: rgba(232, 160, 69, 0.1) !important; border-color: rgba(232, 160, 69, 0.4) !important; color: var(--accent-primary) !important; box-shadow: none !important; }
+
+/* ── Game cards ── */
+.game-card { background: var(--bg-card) !important; border-color: rgba(255, 255, 255, 0.05) !important; }
+.game-card:hover { border-color: rgba(232, 160, 69, 0.3) !important; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important; }
+.game-card-rating { color: var(--accent-primary) !important; }
+.game-card-date   { color: var(--text-muted) !important; }
+.game-card-img    { filter: brightness(0.8) saturate(0.9) !important; }
+.game-card:hover .game-card-img { filter: brightness(0.95) saturate(1.0) !important; }
+
+/* ── Results count ── */
+.results-count span { color: var(--accent-primary) !important; text-shadow: none !important; }
+
+/* ── Load more ── */
+.load-more-btn { border-color: rgba(255, 255, 255, 0.1) !important; color: var(--text-secondary) !important; }
+.load-more-btn:hover { background: rgba(232, 160, 69, 0.06) !important; border-color: rgba(232, 160, 69, 0.3) !important; box-shadow: none !important; color: var(--accent-primary) !important; }
+
+/* ── User module ── */
+.status-dot { background: var(--accent-primary) !important; box-shadow: none !important; animation: none !important; }
+.player-name { color: var(--text-secondary) !important; }
+.profile-dropdown { background: var(--bg-card) !important; border-color: rgba(255, 255, 255, 0.08) !important; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important; }
+.drop-item { color: var(--text-secondary) !important; }
+.drop-item:hover { color: var(--accent-warm) !important; background: rgba(232, 160, 69, 0.06) !important; }
+.drop-divider { background: rgba(255, 255, 255, 0.06) !important; }
+
+/* ── Toast ── */
+.custom-toast { background: var(--bg-card) !important; border-color: rgba(232, 160, 69, 0.3) !important; color: var(--accent-warm) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; }
+
+/* ── Diagnostics ── */
+.diag-card { border-color: rgba(255, 255, 255, 0.06) !important; }
+.diag-card:hover { border-color: rgba(232, 160, 69, 0.2) !important; box-shadow: none !important; }
+.diag-card h3 { color: var(--text-muted) !important; }
+.diag-card p  { color: var(--text-primary) !important; text-shadow: none !important; }
+.accent-primary { color: var(--accent-primary) !important; }
+
+/* ── Hamburger ── */
+.hamburger-btn span       { background: var(--text-secondary) !important; box-shadow: none !important; }
+.hamburger-btn:hover span { background: var(--accent-primary) !important; }
+
+/* ── Sidebar ── */
+.sidebar-menu { background: #0a0c10 !important; border-right-color: rgba(255, 255, 255, 0.06) !important; }
+.side-link { color: var(--text-secondary) !important; }
+.side-link:hover { color: var(--accent-primary) !important; text-shadow: none !important; }
+.side-link sup { color: var(--accent-dim) !important; }
+
+/* ── About ── */
+.stat-num   { color: var(--accent-primary) !important; text-shadow: none !important; }
+.stat-label { color: var(--text-muted) !important; }
+.stat-block { border-color: rgba(255, 255, 255, 0.06) !important; background: var(--bg-card) !important; }
+.stat-block:first-child { border-color: rgba(232, 160, 69, 0.15) !important; }
+
+.value-icon  { color: var(--accent-primary) !important; text-shadow: none !important; }
+.value-title { color: var(--text-primary) !important; }
+.value-desc  { color: var(--text-secondary) !important; }
+
+.tl-item::before { background: var(--accent-primary) !important; box-shadow: none !important; }
+.tl-date         { color: var(--accent-dim) !important; }
+.tl-title        { color: var(--accent-warm) !important; }
+.tl-desc         { color: var(--text-secondary) !important; }
+.timeline::before { background: rgba(255, 255, 255, 0.06) !important; }
+
+/* ── Contact ── */
+.info-icon  { color: var(--accent-primary) !important; text-shadow: none !important; }
+.info-label { color: var(--text-muted) !important; }
+.info-value { color: var(--text-primary) !important; }
+.info-card  { background: var(--bg-card) !important; border-color: rgba(255, 255, 255, 0.06) !important; }
+.info-card:hover { border-color: rgba(232, 160, 69, 0.2) !important; box-shadow: none !important; }
+.response-note { background: rgba(232, 160, 69, 0.04) !important; border-color: rgba(232, 160, 69, 0.12) !important; color: var(--text-secondary) !important; }
+
+.form-input, .form-select, .form-textarea { background: rgba(255, 255, 255, 0.03) !important; border-color: rgba(255, 255, 255, 0.08) !important; color: var(--text-primary) !important; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(232, 160, 69, 0.4) !important; box-shadow: 0 0 0 2px rgba(232, 160, 69, 0.06) !important; }
+
+.submit-btn       { background: var(--accent-primary) !important; color: #0d0f12 !important; box-shadow: none !important; }
+.submit-btn:hover { background: var(--accent-warm) !important; box-shadow: none !important; }
+
+/* ── FAQ ── */
+.faq-icon    { color: var(--accent-dim) !important; text-shadow: none !important; }
+.faq-q-text  { color: var(--text-primary) !important; }
+.faq-item    { border-color: rgba(255, 255, 255, 0.05) !important; }
+.faq-item.open { border-color: rgba(232, 160, 69, 0.2) !important; box-shadow: none !important; }
+.faq-question { background: var(--bg-card) !important; }
+.faq-question:hover { background: var(--bg-surface) !important; }
+.faq-answer-inner { border-top-color: rgba(255, 255, 255, 0.05) !important; color: var(--text-secondary) !important; }
+.faq-answer-inner a { color: var(--accent-primary) !important; text-shadow: none !important; }
+.faq-category { color: var(--accent-dim) !important; text-shadow: none !important; }
+
+/* ── Login / Signup ── */
+.loginCard { background: #0f1318 !important; border-color: rgba(255, 255, 255, 0.08) !important; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8) !important; }
+.loginCard:hover { border-color: rgba(232, 160, 69, 0.2) !important; box-shadow: 0 35px 70px rgba(0, 0, 0, 0.9) !important; }
+
+.inputBox { background: #080b10 !important; border-color: rgba(255, 255, 255, 0.07) !important; }
+.inputBox:focus-within { border-color: rgba(232, 160, 69, 0.35) !important; box-shadow: 0 0 0 2px rgba(232, 160, 69, 0.06) !important; }
+.inputBox input::placeholder { color: rgba(255, 255, 255, 0.2) !important; }
+
+.gameOnBtn       { background: var(--accent-primary) !important; color: #0d0f12 !important; box-shadow: none !important; }
+.gameOnBtn:hover { background: var(--accent-warm) !important; box-shadow: none !important; }
+.gameOnBtn.success { background: #6aaa70 !important; box-shadow: none !important; }
+
+.socialBtn { background: #0a0d12 !important; border-color: rgba(255, 255, 255, 0.07) !important; color: var(--text-muted) !important; }
+.socialBtn:hover { background: rgba(232, 160, 69, 0.08) !important; border-color: rgba(232, 160, 69, 0.3) !important; color: var(--accent-primary) !important; box-shadow: none !important; }
+
+.signupLink   { color: rgba(255, 255, 255, 0.3) !important; }
+.signupLink a { color: var(--accent-primary) !important; border-color: rgba(232, 160, 69, 0.3) !important; }
+.signupLink a:hover { color: var(--accent-warm) !important; text-shadow: none !important; }
+
+.links a       { color: rgba(255, 255, 255, 0.3) !important; }
+.links a:hover { color: var(--accent-primary) !important; }
+
+/* ── Game Detail ── */
+.gd-eyebrow, .gd-section-label { color: var(--accent-dim) !important; }
+.gd-rating-badge { background: rgba(232, 160, 69, 0.1) !important; border-color: rgba(232, 160, 69, 0.3) !important; color: var(--accent-primary) !important; text-shadow: none !important; }
+.gd-stat-val   { color: var(--accent-primary) !important; text-shadow: none !important; }
+.gd-stat-label { color: var(--text-muted) !important; }
+.gd-stat { background: var(--bg-card) !important; border-color: rgba(255, 255, 255, 0.05) !important; }
+.gd-stat:hover { background: var(--bg-surface) !important; border-color: rgba(232, 160, 69, 0.2) !important; }
+
+.gd-info-card       { background: var(--bg-card) !important; border-color: rgba(255, 255, 255, 0.06) !important; }
+.gd-info-card-title { color: var(--accent-dim) !important; }
+.gd-info-key { color: var(--text-muted) !important; }
+.gd-info-val { color: var(--text-secondary) !important; }
+.gd-info-row { border-bottom-color: rgba(255, 255, 255, 0.04) !important; }
+
+.gd-chip { background: rgba(255, 255, 255, 0.04) !important; border-color: rgba(255, 255, 255, 0.08) !important; color: var(--text-secondary) !important; }
+.gd-chip:hover { border-color: rgba(232, 160, 69, 0.3) !important; color: var(--accent-primary) !important; }
+
+.gd-store-link { color: var(--text-secondary) !important; }
+.gd-store-link:hover { background: rgba(232, 160, 69, 0.06) !important; border-color: rgba(232, 160, 69, 0.2) !important; color: var(--accent-primary) !important; }
+.gd-store-link i { color: var(--accent-primary) !important; }
+
+.gd-back-btn       { color: var(--text-secondary) !important; }
+.gd-back-btn:hover { color: var(--accent-primary) !important; }
+
+.gd-section-label::after { background: rgba(255, 255, 255, 0.06) !important; }
+.gd-screenshot { border-color: rgba(255, 255, 255, 0.07) !important; }
+.gd-screenshot:hover { border-color: rgba(232, 160, 69, 0.3) !important; }
+
+.gd-rating-card { background: var(--bg-card) !important; border-color: rgba(255, 255, 255, 0.06) !important; }
+.gd-rating-card:hover { border-color: rgba(232, 160, 69, 0.2) !important; }
+.gd-rc-title { color: var(--text-muted) !important; }
+.gd-rc-bar-track { background: rgba(255, 255, 255, 0.05) !important; }
+
+.gd-load-spinner { border-color: rgba(255, 255, 255, 0.08) !important; border-top-color: var(--accent-primary) !important; }
+.gd-loading p { color: var(--text-muted) !important; }
+.gd-error i   { color: rgba(232, 160, 69, 0.3) !important; }
+.gd-error p   { color: var(--text-muted) !important; }
+.gd-description { color: var(--text-secondary) !important; }
