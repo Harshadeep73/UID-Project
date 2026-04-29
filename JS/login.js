@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loginBtn.disabled = true;
 
             try {
-                const res = await fetch("https://your-railway-app.up.railway.app/login", { // 🔁 CHANGE THIS
+                const res = await fetch("uid-project-production-9d8b.up.railway.app/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
