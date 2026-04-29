@@ -1,5 +1,13 @@
 document.body.classList.add('loaded');
 
+
+const user = localStorage.getItem("user");
+
+if (!user) {
+    window.location.href = "login.html";
+}
+
+
 const showToast = (msg) => {
     const t = document.getElementById('customToast');
     t.querySelector('#toastMessage').textContent = msg;

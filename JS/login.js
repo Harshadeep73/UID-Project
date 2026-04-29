@@ -27,55 +27,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ── GAME ON BUTTON ──
-    const loginBtn = document.getElementById('loginBtn');
+    const loginBtn = document.getElementById("loginBtn");
 
     if (loginBtn) {
-        loginBtn.addEventListener('click', () => {
-            const email    = document.getElementById("email").value.trim();
+        loginBtn.addEventListener("click", async () => {
+            const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value.trim();
 
             if (!email || !password) {
-                showToast("Please fill in both email and password.");
+                showToast("Please fill in all fields");
                 return;
             }
 
-            // Button state change
-            loginBtn.classList.add('success');
-            loginBtn.textContent = "GO CLUTCH !";
+            // ── LOADING STATE ──
+            loginBtn.textContent = "Logging in...";
+            loginBtn.disabled = true;
 
-            // Store session in localStorage
-            localStorage.setItem("loggedIn", "true");
-            const tempName = email.split('@')[0];
-            localStorage.setItem("playerName", tempName);
+            try {
+                const res = await fetch("https://your-railway-app.up.railway.app/login", { // 🔁 CHANGE THIS
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, password })
+                });
 
-            // Redirect to home — same HTML/ folder
-            setTimeout(() => {
-                window.location.href = "home.html";
-            }, 1200);
+                const data = await res.text();
+
+                if (data === "LOGIN_SUCCESS") {
+                    localStorage.setItem("loggedIn", "true");
+                    window.location.href = "home.html";
+                } else {
+                    showToast("Invalid email or password");
+                }
+
+            } catch (err) {
+                console.error(err);
+                showToast("Cannot connect to server");
+            }
+
+            //Reset button
+            loginBtn.textContent = "GAME ON";
+            loginBtn.disabled = false;
         });
     }
-});
 
-// ── CUSTOM TOAST LOGIC ──
-window.showToast = function (message) {
-    const toast    = document.getElementById('customToast');
-    const toastMsg = document.getElementById('toastMessage');
+    // ── CUSTOM TOAST LOGIC ──
+    window.showToast = function (message) {
+        const toast    = document.getElementById('customToast');
+        const toastMsg = document.getElementById('toastMessage');
 
-    if (toast && toastMsg) {
-        toastMsg.textContent = message;
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000);
-    }
-};
+        if (toast && toastMsg) {
+            toastMsg.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    };
 
-// ── SITE LOADER ──
-window.addEventListener("load", () => {
-    const loader = document.getElementById("siteLoader");
-    if (loader) {
-        setTimeout(() => {
-            loader.classList.add("hide");
-        }, 2500);
-    }
+    // ── SITE LOADER ──
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("siteLoader");
+        if (loader) {
+            setTimeout(() => {
+               loader.classList.add("hide");
+            }, 2500);
+        }
+    });
 });

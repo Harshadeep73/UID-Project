@@ -1,3 +1,11 @@
+const user = localStorage.getItem("user");
+
+if (!user) {
+    window.location.href = "login.html";
+}
+
+
+
 document.body.classList.add('loaded');
 
 const API_KEY = "bc866a3dcd8943a5b813991d52d57209";

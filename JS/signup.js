@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const signupBtn = document.getElementById('signupBtn');
 
     if (signupBtn) {
-        signupBtn.addEventListener('click', () => {
+        signupBtn.addEventListener('click', async () => {
             const username        = document.getElementById("username").value.trim();
             const email           = document.getElementById("email").value.trim();
             const password        = document.getElementById("password").value.trim();
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (password !== confirmPassword) {
-                showToast("Passwords do not match. Try again.");
+                showToast("Passwords do not match.");
                 return;
             }
 
@@ -52,18 +52,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Button state change
-            signupBtn.classList.add('success');
+            //Loading state
+            signupBtn.textContent = "Creating...";
+            signupBtn.disabled = true;
+
+            try {
+                const res = await fetch("https://your-railway-app.up.railway.app/signup", { // 🔁 CHANGE THIS
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await res.text();
+
+                if (data === "USER_EXISTS") {
+                    showToast("Account already exists. Please login.");
+                    window.location.href = "login.html"
+                } 
+                else if (data === "SIGNUP_SUCCESS") {
+                    localStorage.setItem("user", email);
+                    window.location.href = "home.html";
+                } 
+                else {
+                    showToast("Signup failed");
+                }
+
+            } catch (err) {
+                console.error(err);
+                showToast("Cannot connect to server");
+            }
+
+            //Reset button
             signupBtn.textContent = "GO CLUTCH !";
-
-            // Store session in localStorage
-            localStorage.setItem("loggedIn", "true");
-            localStorage.setItem("playerName", username);
-
-            // Redirect to home — same HTML/ folder
-            setTimeout(() => {
-                window.location.href = "home.html";
-            }, 1200);
+            signupBtn.disabled = false;
         });
     }
 });
