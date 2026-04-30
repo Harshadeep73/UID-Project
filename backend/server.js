@@ -12,13 +12,14 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-app.options("(.*)", (req, res) => {
+app.use(express.json());
+
+app.options("/login", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "https://harshadeep73.github.io");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.sendStatus(200);
 });
-app.use(express.json());
 
 app.options("/signup", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "https://harshadeep73.github.io");
@@ -59,13 +60,6 @@ app.post("/signup", async (req, res) => {
     console.error(err);
     res.status(500).send("INTERNAL SERVER ERROR");
   }
-});
-
-app.options("/login", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://harshadeep73.github.io");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.sendStatus(200);
 });
 
 app.post("/login", async (req, res) => {
