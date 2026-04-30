@@ -18,9 +18,11 @@ const app = express();
 
 app.use(express.json());
 
+app.options("/signup", (req, res) => {
+  res.sendStatus(200);
+});
 
-
-app.post("/signup", async (req, res) => {
+/*app.post("/signup", async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -53,7 +55,7 @@ app.post("/signup", async (req, res) => {
     res.status(500).send("INTERNAL SERVER ERROR");
   }
 });
-
+*/
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
