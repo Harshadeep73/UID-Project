@@ -9,7 +9,7 @@ app.use(cors({
   origin: "https://harshadeep73.github.io",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"],
-  optionsSuccessStatus: 200  // ← add this
+  optionsSuccessStatus: 200
 }));
 
 app.options("*", (req, res) => {
@@ -20,7 +20,12 @@ app.options("*", (req, res) => {
 });
 app.use(express.json());
 
-
+app.options("/signup", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://harshadeep73.github.io");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.sendStatus(200);
+});
 
 app.post("/signup", async (req, res) => {
   const { email, password } = req.body;
@@ -56,6 +61,12 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+app.options("/login", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://harshadeep73.github.io");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.sendStatus(200);
+});
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;

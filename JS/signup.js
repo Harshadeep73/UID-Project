@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+
+
             //Loading state
             signupBtn.textContent = "Creating...";
             signupBtn.disabled = true;
