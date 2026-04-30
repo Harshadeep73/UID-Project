@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 const data = await res.text();
-
+                
                 if (data === "USER_EXISTS") {
                     showToast("Account already exists. Please login.");
                     window.location.href = "login.html"
@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "home.html";
                 } 
                 else {
+                    console.log(data);
                     showToast("Signup failed");
                 }
 
