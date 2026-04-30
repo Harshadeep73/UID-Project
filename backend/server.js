@@ -1,8 +1,8 @@
 const cors = require("cors");
 
 app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST"],
+  origin: "https://harshadeep73.github.io",
+  methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
 
