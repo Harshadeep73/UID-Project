@@ -1,5 +1,14 @@
-require("dotenv").config();
+const cors = require("cors");
 
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
+
+app.options("*", cors());
+
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
@@ -7,8 +16,6 @@ const pool = require("./db");
 
 const app = express();
 
-
-app.use(cors());
 app.use(express.json());
 
 
