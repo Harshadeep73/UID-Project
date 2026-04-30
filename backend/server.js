@@ -8,10 +8,16 @@ const app = express();
 app.use(cors({
   origin: "https://harshadeep73.github.io",
   methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"]
+  allowedHeaders: ["Content-Type"],
+  optionsSuccessStatus: 200  // ← add this
 }));
 
-app.options("*", cors());
+app.options("*", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://harshadeep73.github.io");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.sendStatus(200);
+});
 app.use(express.json());
 
 
