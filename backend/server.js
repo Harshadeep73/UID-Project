@@ -12,7 +12,7 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-app.options("*", (req, res) => {
+app.options("(.*)", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "https://harshadeep73.github.io");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
