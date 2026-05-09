@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "login.html"
                 } 
                 else if (data === "SIGNUP_SUCCESS") {
+                    localStorage.setItem("loggedIn", 'true');
                     localStorage.setItem("PlayerName", username);
                     window.location.href = "home.html";
                 } 
