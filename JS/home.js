@@ -6,7 +6,7 @@
 
 const API_KEY = 'bc866a3dcd8943a5b813991d52d57209';
 
-const user = localStorage.getItem("user");
+const user = localStorage.getItem("PlayerName");
 
 if (!user) {
     window.location.href = "login.html";
@@ -40,8 +40,8 @@ function initUserModule() {
     const isAuth = localStorage.getItem('loggedIn') === 'true';
 
     if (isAuth) {
-        const stored = localStorage.getItem('playerName');
-        nameDisplay.textContent = stored ? stored.toUpperCase() : 'PLAYER';
+        const stored = localStorage.getItem('PlayerName');
+        nameDisplay.textContent = stored;
     } else {
         nameDisplay.textContent = 'GUEST';
         if (authBtn) {

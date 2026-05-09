@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({ email, password })
+                    body: JSON.stringify({ email, password, username })
                 });
 
                 const data = await res.text();
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "login.html"
                 } 
                 else if (data === "SIGNUP_SUCCESS") {
-                    localStorage.setItem("user", email);
+                    localStorage.setItem("PlayerName", username);
                     window.location.href = "home.html";
                 } 
                 else {

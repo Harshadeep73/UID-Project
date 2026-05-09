@@ -1,7 +1,7 @@
 document.body.classList.add('loaded');
 
 
-const user = localStorage.getItem("user");
+const user = localStorage.getItem("PlayerName");
 
 if (!user) {
     window.location.href = "login.html";

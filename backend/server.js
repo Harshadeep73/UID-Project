@@ -29,9 +29,9 @@ app.options("/signup", (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
 
-  if (!email || !password) {
+  if (!email || !password || !username) {
     return res.status(400).send("INVALID_INPUT");
   }
 
@@ -51,8 +51,8 @@ app.post("/signup", async (req, res) => {
 
    
     await pool.query(
-      "INSERT INTO users (email, password) VALUES ($1, $2)",
-      [email, hashed]
+      "INSERT INTO users (email, password, username) VALUES ($1, $2, $3)",
+      [email, hashed, username]
     );
 
     res.send("SIGNUP_SUCCESS");
@@ -83,11 +83,11 @@ app.post("/login", async (req, res) => {
 
     const match = await bcrypt.compare(password, user.password);
 
-    if (match) {
-      res.send("LOGIN_SUCCESS");
-    } else {
-      res.send("INVALID");
+    if(!match){
+      return res.send("LOGIN_FAILED");
     }
+
+    res.json({status: "LOGIN_SUCCESS", username: user.username});
   } catch (err) {
     console.error(err);
     res.status(500).send("INTERNAL SERVER ERROR");

@@ -52,10 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: JSON.stringify({ email, password })
                 });
 
-                const data = await res.text();
+                const data = await res.json();
 
-                if (data === "LOGIN_SUCCESS") {
+                if (data.status === "LOGIN_SUCCESS") {
                     localStorage.setItem("loggedIn", "true");
+                    localStorage.setItem("PlayerName", data.username);
                     window.location.href = "home.html";
                 } else {
                     showToast("Invalid email or password");
